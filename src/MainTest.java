@@ -3,9 +3,6 @@ import org.junit.jupiter.api.Test;
 
 class MainTest {
 
-    @org.junit.jupiter.api.Test
-    void main() {
-    }
     // 1.
     @Test
     public void sumRangetest() {
@@ -53,5 +50,4 @@ class MainTest {
     public void calculateHypotenuseTest() {
         Assertions.assertEquals(Math.sqrt(Math.pow(2, 2) + Math.pow(5, 2)), Main.calculateHypotenuse(2, 5));
     }
-
 }

@@ -5,55 +5,43 @@ public class Main {
         // 1. Создайте метод sumRange, который принимает два числа (начало и конец диапазона) и возвращает сумму всех чисел между ними (включительно).
         int a = 20;
         int b = 50;
-        System.out.printf("Сумма чисел в интервале %s .. %s = %s%s", a, b, sumRange(a, b), System.lineSeparator());
+        System.out.printf("Сумма чисел в интервале %s .. %s = %s\n", a, b, sumRange(a, b));
 
         // 2. Создайте два перегруженных метода add: Первый складывает два целых числа; Второй складывает две строки.
-        int sum = add(39, 71);
-        System.out.println("Сумма чисел: " + sum);
-        String result = add("Привет, ", "мир!");
-        System.out.println("Результат сложения строк: " + result);
+        System.out.println("Сумма чисел: " + add(39, 71));
+        System.out.println("Результат сложения строк: " + add("Привет, ", "мир!"));
 
         // 3. Напишите метод findMax, который принимает массив целых чисел и возвращает его максимальный элемент.
         int[] Array = {67, 77, 90, 8, 0, 12};
-        int max = findMax(Array);
-        System.out.println("Максимальный элемент массива: " + max);
+        System.out.println("Максимальный элемент массива: " + findMax(Array));
 
         // 4. Напишите метод, вычисляющий факториал числа с помощью цикла for
         int input = 9;
-        long output = factorial(input);
-        System.out.println("Факториал числа " + input + " равен " + output);
+        System.out.println("Факториал числа " + input + " равен " + factorial(input));
 
         // 5. Создайте перегруженные методы calculateArea: Для круга (принимает радиус); Для прямоугольника (принимает длину и ширину).
-        double circleRadius =444.0;
-        double circleArea = calculateArea(circleRadius);
-        System.out.println("Площадь круга с радиусом " + circleRadius + ": " + circleArea);
+        double circleRadius = 444.0;
+        System.out.println("Площадь круга с радиусом " + circleRadius + ": " + calculateArea(circleRadius));
 
         double rectLength = 7.0;
         double rectWidth = 3.0;
-        double rectangleArea = calculateArea(rectLength, rectWidth);
-        System.out.println("Площадь прямоугольника: " + rectangleArea);
+        System.out.println("Площадь прямоугольника: " + calculateArea(rectLength, rectWidth));
 
         // 6. Реализуйте метод, который принимает три числа и возвращает их среднее арифметическое.
-        double average = calculateAverage(12, 13, 14);
-        System.out.println("Среднее арифметическое: " + average);
+        System.out.println("Среднее арифметическое: " + calculateAverage(12, 13, 14));
 
         // 7. Напишите метод, который принимает два числа, представляющие длины катетов, и возвращает длину гипотенузы (используйте теорему Пифагора).
         double sideA = 5.0;
         double sideB = 7.0;
-        double hypotenuse = calculateHypotenuse(sideA, sideB);
-        System.out.println("Гипотенуза при катетах " + sideA + " и " + sideB + " равна: " + hypotenuse);
-        // 8. Реализовать тесты для задач выше :)
-
+        System.out.println("Гипотенуза при катетах " + sideA + " и " + sideB + " равна: " + calculateHypotenuse(sideA, sideB));
     }
 
     // 1. Создайте метод sumRange, который принимает два числа (начало и конец диапазона) и возвращает сумму всех чисел между ними (включительно).
     public static int sumRange(int start, int end) {
-        int sum = 0;
         if (start > end) {
-            int temp = start;
-            start = end;
-            end = temp;
+            return 0;
         }
+        int sum = 0;
         for (int i = start; i <= end; i++) {
             sum += i;
         }
@@ -86,7 +74,7 @@ public class Main {
     // 4. Напишите метод, вычисляющий факториал числа с помощью цикла for
     public static long factorial(int number) {
         long result = 1;
-        for (int i = 1; i <= number; i++) {
+        for (int i = 2; i <= number; i++) {
             result *= i;
         }
         return result;
@@ -100,6 +88,7 @@ public class Main {
     public static double calculateArea(double length, double width) {
         return length * width;
     }
+
     // 6. Реализуйте метод, который принимает три числа и возвращает их среднее арифметическое.
     public static double calculateAverage(int a, int b, int c) {
         return (a + b + c) / 3.0;
@@ -109,6 +98,4 @@ public class Main {
     public static double calculateHypotenuse(double sideA, double sideB) {
         return Math.sqrt(sideA * sideA + sideB * sideB);
     }
-
-    // 8. Реализовать тесты для задач выше :)
 }
