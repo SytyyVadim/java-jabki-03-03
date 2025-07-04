@@ -14,12 +14,8 @@ class MainTest {
 
     // 2.
     @Test
-    public void sunIntTest() {
+    public void addTest() {
         Assertions.assertEquals(17, Main.add(9, 8));
-    }
-
-    @Test
-    public void sumStringTest() {
         Assertions.assertEquals("ПриветБобер", Main.add("Привет", "Бобер"));
     }
 
